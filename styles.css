@@ -66,10 +66,10 @@ body {
     background-color: #d8e4bc;
 }
 
-.t-letter,
-.b-letter,
-.l-number,
-.r-number {
+.top-letter,
+.bottom-letter,
+.left-number,
+.right-number {
     margin: 0;
     padding: 5px;
     font-size: 2vh;
@@ -77,30 +77,219 @@ body {
     display: flex;
 }
 
-.t-letter,
-.b-letter {
+.top-letter,
+.bottom-letter {
     justify-content: space-evenly;
 }
 
-.t-letter {
+.top-letter {
     align-items: flex-end;
 }
 
-.b-letter {
+.bottom-letter {
     align-items: flex-start;
 }
 
-.l-number,
-.r-number {
+.left-number,
+.right-number {
     align-items: center;
 } 
 
-.l-number {
+.left-number {
     justify-content: flex-end;
 }
 
-.r-number {
+.right-number {
     justify-content: flex-start;
 }
 
+#e2 {
+    animation: move-up-2 3s;
+    animation-fill-mode: forwards;
+}
 
+#e7 {
+    animation: move-down-2 3s 3s, kill 2s 26s;
+    animation-fill-mode: forwards;
+}
+
+#f1 {
+    animation: move-up-left-3 3s 6s, move-up-right-3-2 3s 36s;
+    animation-fill-mode: forwards;
+}
+
+#d7 {
+    animation: move-down-1 3s 9s;
+    animation-fill-mode: forwards;
+}
+
+#g1 {
+    animation: move-up-left-long 3s 12s, move-up-left-long-2 3s 24s;
+    animation-fill-mode: forwards;
+}
+
+#c8 {
+    animation: move-down-right-4 3s 15s, move-down-left-4-2 3s 30s;
+    animation-fill-mode: forwards;
+}
+
+#b1 {
+    animation: move-up-right-long 3s 18s, move-up-right-long-2 3s 42s;
+    animation-fill-mode: forwards;
+}
+
+#g7 {
+    animation: move-down-1 3s 21s;
+    animation-fill-mode: forwards;
+}
+
+#d1 {
+    animation: kill 2s 32s;
+    animation-fill-mode: forwards;
+}
+
+#f7 {
+    animation: kill 2s 37s;
+    animation-fill-mode: forwards;
+}
+
+#e8 {
+    animation: move-down-1 3s 39s, defeat 3s 43s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes move-up-1 {
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(-6vh);
+    }
+}
+
+@keyframes move-up-2 {
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(-13vh);
+    }
+}
+
+@keyframes move-down-1 {
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(6vh);
+    }
+}
+
+@keyframes move-down-2 {
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(13vh);
+    }
+}
+
+@keyframes move-up-left-3 {
+    from {
+        transform: translate(0%);
+    }
+    to {
+        transform: translate(-19vh, -19vh);
+    }
+}
+
+@keyframes move-up-left-long {
+    from {
+        transform: translate(0%);
+    }
+    to {
+        transform: translate(-6vh, -13vh);
+    }
+}
+
+@keyframes move-up-right-long {
+    from {
+        transform: translate(0%);
+    }
+    to {
+        transform: translate(6vh, -13vh);
+    }
+}
+
+@keyframes move-down-left-4 {
+    from {
+        transform: translate(0%);
+    }
+    to {
+        transform: translate(-25vh, 25vh);
+    }
+}
+
+@keyframes move-down-right-4 {
+    from {
+        transform: translate(0%);
+    }
+    to {
+        transform: translate(25vh, 25vh);
+    }
+}
+
+@keyframes move-up-left-long-2 {
+    from {
+        transform: translate(-6vh, -13vh)
+    }
+    to {
+        transform: translate(-13vh, -25vh)
+    }
+}
+
+@keyframes move-down-left-4-2 {
+    0% { 
+        transform: translate(-25vh, 25vh); 
+    }
+    100% { 
+        transform: translate(6vh, 44vh); 
+    }
+}
+
+@keyframes move-up-right-3-2 {
+    from {
+        transform: translate(-19vh, -19vh);
+    }
+    to {
+        transform: translate(0vh, -38vh);
+    }
+}
+
+@keyframes move-up-right-long-2 {
+    from {
+        transform: translate(6vh, -13vh);
+    }
+    to {
+        transform: translate(12vh, -25vh);
+    }
+}
+
+@keyframes kill {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+}
+
+@keyframes defeat {
+    from {
+        box-shadow: 0px 0px 0px 0px;
+    }
+    to {
+        box-shadow: 0px 0px 10px 10px red;
+        border-radius: 30px;
+    }
+}
